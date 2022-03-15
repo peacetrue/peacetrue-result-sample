@@ -1,13 +1,5 @@
-= gradle 模板项目
-xiayx <xiayouxue@hotmail.com>
+= 响应结果样章
+peace <xiayouxue@hotmail.com>
 v1.0, 2019-08-23: SNAPSHOT
-:doctype: docbook
-:toc: left
-:numbered:
-:imagesdir: docs/assets/images
-:sourcedir: src/main/java
-:resourcesdir: src/main/resources
-:testsourcedir: src/test/java
-:source-highlighter: highlightjs
 
-详情参考 https://peacetrue.cn/summarize/peacetrue-template-gradle/index.html[安宁的博客^]。
+详情参考 https://peacetrue.cn/summarize/peacetrue-result-sample/index.html[安宁的博客^]。

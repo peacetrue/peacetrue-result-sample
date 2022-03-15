@@ -1,17 +1,119 @@
 = 简介
 
-peacetrue-template-gradle 是一个基于 gradle 的 xref:github-template.adoc[github 模板项目]。
+*peacetrue-result-sample* 项目用于演示如何使用 *peacetrue-result* 组件。
 
-包含以下内容：
+//@formatter:off
 
-* 基于 jdk8+
-* 使用 gradle-5.6.2
-* build.gradle中包含以下内容：
-** idea 插件，支持在 Intellij IDEA 中开发
-** maven-publish 插件，发布类库到 maven 中央仓库
-** 依赖版本管理
-*** spring-boot-dependencies:1.5.20.RELEASE
-*** peacetrue-dependencies:1.0.4-SNAPSHOT
-* 文档目录 /docs 包含以下内容：
-** ``README.graffle``设计图表
-** 一个符合 https://antora.org[antora^] 要求的文档结构
+== 前言
+
+*peacetrue-result* 组件基于 *Spring 框架*，
+依赖 `org.springframework:4` 和 `org.springframework.boot:1` 及以上版本。
+
+== 检出 1.0.0 版本
+
+不同版本中内容不同，
+首先检出 1.0.0 版本，
+1.0.0 版本中有一个返回 JSON 的样章控制器：
+
+.SampleController
+[{source},java]
+----
+include::example$peacetrue-result-sample/src/main/java/com/github/peacetrue/result/SampleController.java[tags=class]
+----
+
+启动系统，依次测试控制器中的方法：
+
+=== success
+
+image::image-2022-03-15-17-41-04-261.png[]
+
+=== missingServletRequestParameter
+
+image::image-2022-03-15-17-41-28-551.png[]
+
+=== missingPathVariable
+
+image::image-2022-03-15-17-42-26-847.png[]
+
+=== methodArgumentTypeMismatch
+
+image::image-2022-03-15-17-44-24-308.png[]
+
+=== bindException
+
+image::image-2022-03-15-17-46-44-241.png[]
+
+=== methodArgumentNotValid
+
+.传入一个无效的 JSON
+image::image-2022-03-15-17-50-21-133.png[]
+
+.传入一个有效的 JSON，但类型错误
+image::image-2022-03-15-17-50-56-901.png[]
+
+.传入一个有效的 JSON，但值不符合规则
+image::image-2022-03-15-17-52-49-409.png[]
+
+== 检出 1.1.0 版本
+
+1.1.0 版本，在 1.0.0 版本的基础上，引入了 *peacetrue-result* 组件：
+
+.成功响应结果类库，封装成功时返回的数据
+[source%nowrap,maven]
+----
+<dependency>
+  <groupId>com.github.peacetrue.result</groupId>
+  <artifactId>peacetrue-result-success</artifactId>
+  <version>1.0.0</version>
+</dependency>
+----
+
+.异常响应结果支持类库，实现具体的异常转换逻辑
+[source%nowrap,maven]
+----
+<dependency>
+  <groupId>com.github.peacetrue.result</groupId>
+  <artifactId>peacetrue-result-exception-support</artifactId>
+  <version>1.0.0</version>
+</dependency>
+----
+
+启动系统，依次测试控制器中的方法：
+
+=== success
+
+image::image-2022-03-15-18-05-50-297.png[]
+
+=== missingServletRequestParameter
+
+image::image-2022-03-15-18-06-29-254.png[]
+
+=== missingPathVariable
+
+image::image-2022-03-15-18-06-55-362.png[]
+
+=== methodArgumentTypeMismatch
+
+image::image-2022-03-15-18-07-20-033.png[]
+
+=== bindException
+
+image::image-2022-03-15-17-46-44-241.png[]
+
+=== methodArgumentNotValid
+
+.传入一个无效的 JSON
+image::image-2022-03-15-18-08-29-507.png[]
+
+.传入一个有效的 JSON，但类型错误
+image::image-2022-03-15-18-08-51-768.png[]
+
+.传入一个有效的 JSON，但值不符合规则
+image::image-2022-03-15-18-09-23-919.png[]
+
+== 总结
+
+通过 2 个版本运行结果的比较，
+可以看出 *peacetrue-result* 组件统一封装返回数据，优化了异常描述。
+
+
