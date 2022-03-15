@@ -98,7 +98,7 @@ image::image-2022-03-15-18-07-20-033.png[]
 
 === bindException
 
-image::image-2022-03-15-17-46-44-241.png[]
+image::image-2022-03-15-20-36-45-850.png[]
 
 === methodArgumentNotValid
 
@@ -114,6 +114,6 @@ image::image-2022-03-15-18-09-23-919.png[]
 == 总结
 
 通过 2 个版本运行结果的比较，
-可以看出 *peacetrue-result* 组件统一封装返回数据，优化了异常描述。
+可以看出 *peacetrue-result* 组件统一封装了返回数据，优化了异常描述。
 
 
