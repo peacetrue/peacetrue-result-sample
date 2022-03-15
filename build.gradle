@@ -37,4 +37,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+    implementation 'com.github.peacetrue.result:peacetrue-result-success:1.0.0'
+    implementation 'com.github.peacetrue.result:peacetrue-result-exception-support:1.0.0'
 }
